@@ -12,8 +12,8 @@ description: >
   parameter / claim", "where do I track this", "set up a Notion database / relation / formula",
   "publish this", "share with the community", "make this public".
 metadata:
-  version: 1.1.0
-  issued: 2026-07-05
+  version: 1.2.0
+  issued: 2026-07-06
   source: https://github.com/forgewurks-labs/claude-skills
 ---
 
@@ -52,6 +52,34 @@ Notion teamspace**; every write of yours goes to your own compartment.
   hardware). *A committed value/decision/claim* → Notion (your teamspace). *The derivation /
   rationale / code* → your repo. *Genuinely open material you choose to share* → the community
   surface, on an explicit publish.
+
+## What you should see on each plane — and what to do if you see more
+
+A correctly-provisioned participant sees **exactly** the surfaces below, no others. At the start
+of a session, enumerate what's actually visible — Linear `list_teams`, Notion `notion-get-teams`
+(plus a `search` for teamspace home pages), GitHub the orgs/repos you can reach — and match it
+against this table. Each surface is one of three kinds:
+
+| Plane | Surface | Kind | Meaning |
+|---|---|---|---|
+| Linear | Your private team | **Yours** | Default write target — all your work items. |
+| Linear | `Forgewurks Labs` team | **Public** | Community surface; publish-only, never a default. |
+| Notion | Your private teamspace | **Yours** | Default write target — your KB mirror. |
+| Notion | `Forgewurks - Closed Beta Sandbox` (home page titled "HQ") | **Public** | Community surface; publish-only. |
+| GitHub | Granted `forgewurks-labs` repos | **Public** | Community repos; access is per-repo, granted by the operator. |
+
+Everything else is **operator-internal** and you should not be able to see it — the operator's
+platform team/teamspace (anything named "Forgewurks Platform" / "Forgewurks - Platform"), the
+`forgewurks-platform` GitHub org, and any **other participant's** private team or teamspace. The
+whole point of the compartments is that these are invisible to you.
+
+**If you can see any surface that isn't in the table above — an operator/platform team or
+teamspace, a `forgewurks-platform` repo, another participant's private compartment, or anything
+you can't confidently classify as Yours or Public — stop and tell the user to report it to
+Robert.** Do not write to it, do not read from it, and do not assume it's fine just because it's
+visible: a surface you can see that isn't on this list is a **provisioning leak**, not a new
+capability. Flagging it is how a misconfigured grant gets caught at first session instead of going
+unnoticed.
 
 ## The community surface — publishing & interacting (opt-in)
 
