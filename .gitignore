@@ -1,0 +1,2 @@
+# agent worktrees (transient, hold their own commits)
+.claude/worktrees/
